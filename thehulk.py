@@ -72,16 +72,17 @@ for i in range(0, len(type_frequencies)):
 		if type_frequencies[key] > maxim:
 			maxim = type_frequencies[key]
 			maxkey = key
-	if maxkey == 'n':
-		type_based_brute_string += numbers
-	elif maxkey == 'l':
-		type_based_brute_string += lower
-	elif maxkey == 'u':
-		type_based_brute_string += upper
-	elif maxkey == 's':
-		type_based_brute_string += symbols
+	if maxkey in type_frequencies:
+		if maxkey == 'n':
+			type_based_brute_string += numbers
+		elif maxkey == 'l':
+			type_based_brute_string += lower
+		elif maxkey == 'u':
+			type_based_brute_string += upper
+		elif maxkey == 's':
+			type_based_brute_string += symbols
 
-	del type_frequencies[maxkey]
+		del type_frequencies[maxkey]
 
 #	Generation of Character Based Bruteforce String.
 #	Selection sort algorithm has been used in this phase.
